@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="xunit" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Contracts\Application.Contracts.csproj" />
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj" />
+    <ProjectReference Include="..\Application.Implementation\Application.Implementation.csproj" />
+    <ProjectReference Include="..\Domain.Contracts\Domain.Contracts.csproj" />
+    <ProjectReference Include="..\Domain.Entities\Domain.Core.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data.Core\Infrastructure.Data.Core.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data.Implementation\Infrastructure.Data.Implementation.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data.Repositories\Infrastructure.Data.Repositories.csproj" />
+    <ProjectReference Include="..\Infrastructure.Transversal.Utilitarios.IoC\Infrastructure.Transversal.Utilitarios.IoC.csproj" />
+    <ProjectReference Include="..\UltraGroup\UltraGroup.csproj" />
+  </ItemGroup>
+
+</Project>

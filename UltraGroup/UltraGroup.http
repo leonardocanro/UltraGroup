@@ -1,0 +1,6 @@
+@UltraGroup_HostAddress = http://localhost:5059
+
+GET {{UltraGroup_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
