@@ -1,0 +1,33 @@
+version: '3.4'
+
+networks:
+  UltraGroupApi:
+   driver: bridge
+
+services:
+  database:
+    container_name: UltraGroup-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Aa1234567!
+    networks:
+      - UltraGroupApi
+  ultragroup:
+    container_name: UltraGroup-Backend
+    image: ${DOCKER_REGISTRY-}ultragroup
+    build:
+      context: .
+      dockerfile: UltraGroup/Dockerfile
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+    environment:
+      - DB_HOST=database
+      - DB_NAME=AgenciaViajes
+      - DB_SA_PASSWORD=Aa1234567!
+    networks:
+      - UltraGroupApi
