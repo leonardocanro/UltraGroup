@@ -1,5 +1,6 @@
 ﻿using Application.Contracts.Contracts;
 using Application.Core.Class;
+using Serilog;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

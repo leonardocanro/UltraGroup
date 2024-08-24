@@ -20,7 +20,7 @@ services:
     image: ${DOCKER_REGISTRY-}ultragroup
     build:
       context: .
-      dockerfile: UltraGroup/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - 8080:80
     depends_on:

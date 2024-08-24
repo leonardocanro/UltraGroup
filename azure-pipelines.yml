@@ -1,0 +1,26 @@
+
+trigger:
+- master
+
+steps:
+# Docker
+- task: DockerCompose@1
+  inputs:
+    projectName: 'ultragroup'
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Azure subscription 1(785c4156-8c30-4c57-a9a5-9f38a848418c)'
+    azureContainerRegistry: '{"loginServer":"testultragroup.azurecr.io", "id" : "/subscriptions/785c4156-8c30-4c57-a9a5-9f38a848418c/resourceGroups/Test/providers/Microsoft.ContainerRegistry/registries/TestUltraGroup"}'
+    dockerComposeFile: 'docker-compose.yml'
+    action: 'Build services'
+- task: DockerCompose@1
+  inputs:
+    projectName: 'ultragroup'
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Azure subscription 1(785c4156-8c30-4c57-a9a5-9f38a848418c)'
+    azureContainerRegistry: '{"loginServer":"testultragroup.azurecr.io", "id" : "/subscriptions/785c4156-8c30-4c57-a9a5-9f38a848418c/resourceGroups/Test/providers/Microsoft.ContainerRegistry/registries/TestUltraGroup"}'
+    dockerComposeFile: 'docker-compose.yml'
+    action: 'Push services'
+    includeSourceTags: true
+    includeLatestTag: true
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
